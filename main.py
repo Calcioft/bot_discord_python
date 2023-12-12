@@ -2,11 +2,12 @@ import config
 import discord
 from discord.ext import commands
 
-bot_teste = False  # <----------------------- Alterar entre bot teste e bot normal
+bot_teste = True  # <----------------------- Alterar entre bot teste e bot normal
 
 
 def run():
     intents = discord.Intents.default()
+    intents.message_content = True
 
     bot = commands.Bot(command_prefix="*", intents=intents)
 
@@ -15,6 +16,9 @@ def run():
         print(bot.user)
         print(bot.user.id)
         print("______________")
+    @bot.command()
+    async def ping(ctx):
+        await ctx.send("pong")
 
     bot.run(config.token)
 
