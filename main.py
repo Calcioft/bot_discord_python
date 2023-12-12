@@ -7,9 +7,10 @@ bot_teste = True  # <----------------------- Alterar entre bot teste e bot norma
 
 def run():
     intents = discord.Intents.default()
-    intents.message_content = True
 
-    bot = commands.Bot(command_prefix="*", intents=intents)
+    discord.Intents.all()
+
+    bot = commands.Bot(command_prefix="!", intents=intents)
 
     @bot.event
     async def on_ready():
