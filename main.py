@@ -2,7 +2,7 @@ import config
 import discord
 from discord.ext import commands
 
-bot_teste = True  # <----------------------- Alterar entre bot teste e bot normal
+bot_teste = False  # <----------------------- Alterar entre bot teste e bot normal
 
 
 def run():
