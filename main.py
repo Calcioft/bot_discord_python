@@ -1,16 +1,23 @@
-# This is a sample Python script.
+import config
+import discord
+from discord.ext import commands
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+bot_teste = True  # <----------------------- Alterar entre bot teste e bot normal
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def run():
+    intents = discord.Intents.default()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    bot = commands.Bot(command_prefix="*", intents=intents)
+
+    @bot.event
+    async def on_ready():
+        print(bot.user)
+        print(bot.user.id)
+        print("______________")
+
+    bot.run(config.token)
+
+
+if __name__ == "__main__":
+    run()
