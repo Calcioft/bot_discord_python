@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 
 bot_teste = True  # <----------------------- Alterar entre bot teste e bot normal
-ligar = True
+ligar = False
 
 def run():
     intents = discord.Intents.default()
